@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bundle & Save</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f8f8f8;
+        }
+
+        .bundle-container {
+            width: 300px;
+            padding: 20px;
+            background-color: #ffffff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+        }
+
+        .bundle-header {
+            text-align: center;
+            font-size: 18px;
+            font-weight: bold;
+            color: #4CAF50;
+            margin-bottom: 15px;
+        }
+
+        .bundle-option {
+            padding: 10px;
+            border: 2px solid #ddd;
+            border-radius: 5px;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            cursor: pointer;
+        }
+
+        .bundle-option.active {
+            border-color: #4CAF50;
+            background-color: #f0faf0;
+        }
+
+        .bundle-option p {
+            margin: 0;
+            font-size: 14px;
+        }
+
+        .discount {
+            color: #4CAF50;
+            font-weight: bold;
+        }
+
+        .popular {
+            color: #4CAF50;
+            font-size: 12px;
+            font-weight: bold;
+            text-align: right;
+        }
+
+        .input-group {
+            display: flex;
+            gap: 10px;
+            margin: 10px 0;
+        }
+
+        .input-group select {
+            padding: 5px;
+            font-size: 14px;
+            width: 100%;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        .total-section {
+            font-weight: bold;
+            text-align: center;
+            margin-top: 15px;
+        }
+
+        .add-to-cart {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            margin-top: 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .add-to-cart:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+
+<div class="bundle-container">
+    <div class="bundle-header">Bundle & Save</div>
+
+    <div class="bundle-option" onclick="selectOption(1)">
+        <div>
+            <p>1 Pair</p>
+            <p class="discount">DKK 195.00 - 50% OFF</p>
+        </div>
+    </div>
+
+    <div class="bundle-option active" onclick="selectOption(2)">
+        <div>
+            <p>2 Pair</p>
+            <p class="discount">DKK 345.00 - 40% OFF</p>
+        </div>
+        <div class="popular">Most Popular</div>
+        <div class="input-group">
+            <select>
+                <option value="S">S</option>
+                <option value="M">M</option>
+                <option value="L">L</option>
+            </select>
+            <select>
+                <option value="colour">Colour</option>
+                <option value="red">Red</option>
+                <option value="blue">Blue</option>
+                <option value="green">Green</option>
+            </select>
+        </div>
+        <div class="input-group">
+            <select>
+                <option value="S">S</option>
+                <option value="M">M</option>
+                <option value="L">L</option>
+            </select>
+            <select>
+                <option value="colour">Colour</option>
+                <option value="red">Red</option>
+                <option value="blue">Blue</option>
+                <option value="green">Green</option>
+            </select>
+        </div>
+    </div>
+
+    <div class="bundle-option" onclick="selectOption(3)">
+        <div>
+            <p>3 Pair</p>
+            <p class="discount">DKK 528.00 - 60% OFF</p>
+        </div>
+    </div>
+
+    <div class="total-section">Total: DKK 360.00</div>
+    <button class="add-to-cart">+ Add to Cart</button>
+</div>
+
+<script>
+    function selectOption(option) {
+        document.querySelectorAll('.bundle-option').forEach((el, index) => {
+            if (index + 1 === option) {
+                el.classList.add('active');
+            } else {
+                el.classList.remove('active');
+            }
+        });
+    }
+</script>
+
+</body>
+</html>
